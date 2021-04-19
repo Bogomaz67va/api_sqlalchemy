@@ -99,3 +99,6 @@ class AlchemyApi:
     def insert(self, name_table: str, name_columns: str, *args):
         """Добавление данных в таблицу"""
         print(self.connection.execute(f"INSERT INTO {name_table} ({name_columns}) VALUES {args};"))
+
+    def command_sql(self, sql: str):
+        print(self.connection.execute(f"{sql}").fetchall())
